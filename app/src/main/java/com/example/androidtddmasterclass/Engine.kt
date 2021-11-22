@@ -1,5 +1,8 @@
 package com.example.androidtddmasterclass
 
+import android.util.Log
+import kotlinx.coroutines.delay
+
 class Engine(
     var isTurnedOn: Boolean = false,
     var temperature: Int = 15
@@ -9,8 +12,9 @@ class Engine(
 //    }
 
 
-    fun turnOn() {
+    suspend fun turnOn() {
         isTurnedOn = true
+        delay(6000)
         temperature = 95
     }
 }
