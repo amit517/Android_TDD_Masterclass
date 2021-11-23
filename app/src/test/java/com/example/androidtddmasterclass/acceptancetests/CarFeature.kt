@@ -26,11 +26,16 @@ class CarFeature {
     }
 
     @Test
-    fun carIsTurningOnItsEngineAndIncreasesTheTemperature() {
+    fun carIsTurningOnItsEngineAndIncreasesTheTemperatureGradually() {
         car.turnOn()
 
-        coroutinesTestRule.advanceTimeBy(6001)
+        coroutinesTestRule.advanceTimeBy(2000)
+        assertEquals(25, car.engine.temperature)
 
+        coroutinesTestRule.advanceTimeBy(2000)
+        assertEquals(50, car.engine.temperature)
+
+        coroutinesTestRule.advanceTimeBy(1000)
         assertEquals(95, car.engine.temperature)
 
         assertTrue(car.engine.isTurnedOn)

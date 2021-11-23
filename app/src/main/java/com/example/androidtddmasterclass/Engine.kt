@@ -29,7 +29,7 @@ class Engine(
             temperature = 95
             emit(temperature)
 
-            Log.d("TAG", "turnOn: ")
+            Log.d("TAG", "engine turned on: ")
         }
     }
 }
